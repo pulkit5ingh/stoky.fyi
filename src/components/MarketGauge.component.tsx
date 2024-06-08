@@ -1,28 +1,50 @@
 'use client';
 import { createChart, ColorType } from 'lightweight-charts';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import {
+  niftyFiftyYearlyData,
   niftyFiftyMidCapYearlyData,
   niftyFiftySmallCapYearlyData,
-  niftyFiftyYearlyData,
 } from '@/data/NSE-indexes-historical.data';
 
 const MarketGaugeComponent: React.FC = () => {
   const backgroundColor = 'white';
   const textColor = 'black';
+  let value = 0;
 
-  const dataNifty50 = [...niftyFiftyYearlyData].sort(
+  const shortDataNifty50 = [...niftyFiftyYearlyData].sort(
     (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
   );
+  const dataNifty50 = shortDataNifty50.map((element) => {
+    value = value + element.value;
+    return {
+      time: element.time,
+      value: value,
+    };
+  });
 
-  const dataNifty50MidCap = [...niftyFiftyMidCapYearlyData].sort(
+  const sortDataNifty50MidCap = [...niftyFiftyMidCapYearlyData].sort(
     (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
   );
+  const dataNifty50MidCap = sortDataNifty50MidCap.map((element) => {
+    value = value + element.value;
+    return {
+      time: element.time,
+      value: value,
+    };
+  });
 
-  const dataNifty50SmallCap = [...niftyFiftySmallCapYearlyData].sort(
+  const sortDataNifty50SmallCap = [...niftyFiftySmallCapYearlyData].sort(
     (a, b) => new Date(a.time).getTime() - new Date(b.time).getTime()
   );
+  const dataNifty50SmallCap = sortDataNifty50SmallCap.map((element) => {
+    value = value + element.value;
+    return {
+      time: element.time,
+      value: value,
+    };
+  });
 
   const chartContainerRef: any = useRef();
 
@@ -54,9 +76,18 @@ const MarketGaugeComponent: React.FC = () => {
         color: 'gray',
         visible: true,
         text: 'NIFTY 50 vs NIFTY MID CAP 50 vs NIFTY SMALL CAP 50 INDEX RETURNS',
-        fontSize: 18,
+        fontSize: 12,
         vertAlign: 'top',
         horzAlign: 'right',
+      },
+      handleScale: {
+        axisDoubleClickReset: false,
+        axisPressedMouseMove: {
+          time: true,
+          price: true,
+        },
+        mouseWheel: true,
+        pinch: false,
       },
     });
 
@@ -136,7 +167,7 @@ const MarketGaugeComponent: React.FC = () => {
   ]);
 
   return (
-    <div>
+    <div className='min-h-96 bg-gray-200'>
       <div ref={chartContainerRef} />
       {/* <button className='btn btn-md px-4 py-1 mx-2 bg-primary-300 text-white'>
         1 Month

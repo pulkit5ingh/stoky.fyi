@@ -32,3 +32,10 @@
   display: inline-block;
   padding: 0 1rem;
 }
+
+/* styles.css */
+.footer-background {
+  background-image: url('../public/images/footer-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}

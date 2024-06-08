@@ -561,8 +561,6 @@ const ChartComponent = (props: any) => {
 
     chart.timeScale().fitContent();
 
-    console.log(data);
-
     const newSeries = chart.addAreaSeries({
       topColor:
         data.change > 0

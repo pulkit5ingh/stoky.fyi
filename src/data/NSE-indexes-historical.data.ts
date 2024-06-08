@@ -2643,10 +2643,11 @@ const niftyFiftySmallCapYearlyRawData: RawDataItem[] = [
 
 export const niftyFiftyYearlyData: DataItem[] = niftyFiftyYearlyRawData.map(
   (element: RawDataItem) => {
+    const value = parseFloat(element.Change.replace('%', ''));
+    const time = convert__Month_Date_YYYY_to_YYYY_MM_DD(element.Date);
     return {
-      time: convert__Month_Date_YYYY_to_YYYY_MM_DD(element.Date),
-      value: parseFloat(element.Change.replace('%', '')),
-      // value: parseFloat(element.Price.replace(',', '')),
+      time: time,
+      value: value + value,
     };
   }
 );
