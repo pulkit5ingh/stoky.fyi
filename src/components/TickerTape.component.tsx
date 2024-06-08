@@ -18,13 +18,13 @@ interface Props {
 
 const SkeletonLoader = () => (
   <div className='bg-gray-800 w-full fixed top-0 z-50'>
-    <span className='ticker-container text-white py-3'></span>
+    <div className='ticker-container py-3'></div>
   </div>
 );
 
 const TickerTapeComponent: React.FC<Props> = ({ initialData }) => {
   const [data, setData] = useState<TickerItem[]>(initialData || []);
-  const [isLoading, setLoading] = useState<boolean>(!initialData);
+  const [isLoading, setLoading] = useState<boolean>(true);
 
   const fetchData = async () => {
     try {

@@ -9,21 +9,101 @@ import redTriangle from '@/public/images/red-triangle.png';
 
 const SkeletonLoader = () => (
   <div className='bg-white my-20 px-4 mx-auto text-center'>
-    <div className='grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-6 gap-2 mb-2'>
-      {[...Array(6)].map((_, index) => (
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2'>
+      {[...Array(4)].map((_, index) => (
         <dl
           key={index}
-          className='border border-gray-200 dark:border-gray-600 bg-gray-100 dark:bg-gray-700 flex flex-col items-center justify-center h-[78px]'
+          className='border border-gray-200 bg-gray-100 flex flex-col items-center justify-center h-auto'
         >
-          <div className='animate-pulse'>
-            <div className='w-20 h-4 bg-gray-200 mb-1'></div>
-            <div className='w-20 h-4 bg-gray-200 mb-1'></div>
-            <div className='w-20 h-4 bg-gray-200'></div>
+          <div className='animate-pulse min-w-full p-2'>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
+            <div className='h-4 bg-gray-200 m-2'></div>
           </div>
         </dl>
       ))}
     </div>
   </div>
+);
+
+const Pagination = () => (
+  <nav className='flex justify-between m-2'>
+    <ul className='inline-flex text-xxs sm:text-xs md:text-sx lg:text-xs xl:text-xs'>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 '
+        >
+          Previous
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 '
+        >
+          1
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 '
+        >
+          2
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 '
+        >
+          3
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 '
+        >
+          4
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 '
+        >
+          5
+        </a>
+      </li>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center p-2 text-gray-800 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 '
+        >
+          Next
+        </a>
+      </li>
+    </ul>
+    <ul className='inline-flex text-xxs sm:text-xs md:text-sx lg:text-xs xl:text-xs'>
+      <li>
+        <a
+          href='#'
+          className='flex items-center justify-center py-2 px-4 text-gray-800 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 hover:text-gray-700 '
+        >
+          View all
+        </a>
+      </li>
+    </ul>
+  </nav>
 );
 
 const TopGainersOrLosersComponent = (props: any) => {
@@ -64,230 +144,344 @@ const TopGainersOrLosersComponent = (props: any) => {
   }
 
   return (
-    <>
-      <div className='bg-white my-20 px-4 mx-auto'>
-        <div className='grid grid-cols-2 gap-2'>
-          <div className='items-center justify-center h-auto border-2 border-gray-200'>
-            {/* Table */}
-            {/* Start coding here */}
-            <p className='py-2 text-center text-gray-800 font-bold uppercase text-xl w-full'>
-              Our Picks 🤑
-            </p>
-            <div className='w-full'>
-              <table className='w-full text-left text-gray-800'>
-                <thead className='font-thin text-sm uppercase bg-gray-50'>
-                  <tr>
-                    <th scope='col' className='px-4 py-3'>
-                      SL.no
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET TYPE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      COMPANY
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET PRICE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHANGES
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHART
-                    </th>
+    <div className='bg-white my-20 px-4 mx-auto'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2'>
+        <div className='items-center justify-center h-auto border-2 border-gray-200'>
+          {/* Table */}
+          {/* Start coding here */}
+          <p className='bg-white-50 py-2 mb-2 text-center text-gray-800 font-bold uppercase text-xs sm:text-xs md:text-xs lg:text-md xl:text-xl w-full'>
+            Our Picks 🤑
+          </p>
+          <div className='w-full relative overflow-x-auto'>
+            <table className='w-full text-center text-gray-800'>
+              <thead className='font-thin text-sm uppercase bg-gray-50'>
+                <tr>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    SL.no
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    TYPE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    COMPANY
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    PRICE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHANGES
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHART
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {gainersData.map((_: any, index: number): any => (
+                  <tr
+                    key={index}
+                    className='border-b border-gray-200 text-sm font-thin'
+                  >
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {index + 1}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.mcap_type}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.short_name}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.prev_close}
+                    </td>
+                    <td className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.percent.toFixed(2)} %
+                    </td>
+                    <td className='w-4'>
+                      <ChartComponent {...props} data={_} />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {gainersData.map((_: any, index: number): any => (
-                    <tr
-                      key={index}
-                      className='border-b border-gray-200 text-sm font-thin'
-                    >
-                      <td className='px-4 py-2'>{index + 1}</td>
-                      <td className='px-4 py-2'>{_.mcap_type}</td>
-                      <td className='px-4 py-2'>{_.short_name}</td>
-                      <td className='px-4 py-2'>{_.prev_close}</td>
-                      <td className='px-4 py-2'>{_.percent.toFixed(2)} %</td>
-                      <td>
-                        <ChartComponent {...props} data={_} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/*  */}
+                ))}
+              </tbody>
+            </table>
+            <Pagination />
           </div>
-          <div className='items-center justify-center h-auto border-2 border-gray-200'>
-            {/* Table */}
-            {/* Start coding here */}
-            <p className='py-2 text-center text-gray-800 font-bold uppercase text-xl w-full'>
-              Most Active ⚡
-            </p>
-            <div className='w-full'>
-              <table className='w-full text-left text-gray-800'>
-                <thead className='font-thin text-sm uppercase bg-gray-50'>
-                  <tr>
-                    <th scope='col' className='px-4 py-3'>
-                      SL.no
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET TYPE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      COMPANY
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET PRICE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHANGES
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHART
-                    </th>
+          {/*  */}
+        </div>
+        <div className='items-center justify-center h-auto border-2 border-gray-200'>
+          {/* Table */}
+          {/* Start coding here */}
+          <p className='bg-white-50 py-2 mb-2 text-center text-gray-800 font-bold uppercase text-xs sm:text-xs md:text-xs lg:text-md xl:text-xl w-full'>
+            Most Active ⚡
+          </p>
+          <div className='w-full relative overflow-x-auto'>
+            <table className='w-full text-center text-gray-800'>
+              <thead className='font-thin text-sm uppercase bg-gray-50'>
+                <tr>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    SL.no
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    TYPE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    COMPANY
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    PRICE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHANGES
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHART
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {gainersData.map((_: any, index: number): any => (
+                  <tr
+                    key={index}
+                    className='border-b border-gray-200 text-sm font-thin'
+                  >
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {index + 1}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.mcap_type}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.short_name}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.prev_close}
+                    </td>
+                    <td className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.percent.toFixed(2)} %
+                    </td>
+                    <td className='w-4'>
+                      <ChartComponent {...props} data={_} />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {gainersData.map((_: any, index: number): any => (
-                    <tr
-                      key={index}
-                      className='border-b border-gray-200 text-sm font-thin'
-                    >
-                      <td className='px-4 py-2'>{index + 1}</td>
-                      <td className='px-4 py-2'>{_.mcap_type}</td>
-                      <td className='px-4 py-2'>{_.short_name}</td>
-                      <td className='px-4 py-2'>{_.prev_close}</td>
-                      <td className='px-4 py-2'>{_.percent.toFixed(2)} %</td>
-                      <td>
-                        <ChartComponent {...props} data={_} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/*  */}
+                ))}
+              </tbody>
+            </table>
+            <Pagination />
           </div>
-          <div className='items-center justify-center h-auto border-2 border-gray-200'>
-            {/* Table */}
-            {/* Start coding here */}
-            <p className='py-2 text-center text-gray-800 font-bold uppercase text-xl w-full'>
-              Top Gainers{' '}
-              <Image
-                className='inline-block pb-1'
-                src={greenTriangle}
-                alt='Green Triangle'
-                width={20}
-                height={20}
-              />
-            </p>
-            <div className='w-full'>
-              <table className='w-full text-left text-gray-800'>
-                <thead className='font-thin text-sm uppercase bg-gray-50'>
-                  <tr>
-                    <th scope='col' className='px-4 py-3'>
-                      SL.no
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET TYPE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      COMPANY
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET PRICE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHANGES
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHART
-                    </th>
+          {/*  */}
+        </div>
+        <div className='items-center justify-center h-auto border-2 border-gray-200'>
+          {/* Table */}
+          {/* Start coding here */}
+          <p className='bg-white-50 py-2 mb-2 text-center text-gray-800 font-bold uppercase text-xs sm:text-xs md:text-xs lg:text-md xl:text-xl w-full'>
+            Top Gainers{' '}
+            <Image
+              className='inline-block pb-1'
+              src={greenTriangle}
+              alt='Green Triangle'
+              width={20}
+              height={20}
+            />
+          </p>
+          <div className='w-full relative overflow-x-auto'>
+            <table className='w-full text-center text-gray-800'>
+              <thead className='font-thin text-sm uppercase bg-gray-50'>
+                <tr>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    SL.no
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    TYPE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    COMPANY
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    PRICE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHANGES
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHART
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {gainersData.map((_: any, index: number): any => (
+                  <tr
+                    key={index}
+                    className='border-b border-gray-200 text-sm font-thin'
+                  >
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {index + 1}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.mcap_type}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.short_name}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.prev_close}
+                    </td>
+                    <td className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.percent.toFixed(2)} %
+                    </td>
+                    <td className='w-4'>
+                      <ChartComponent {...props} data={_} />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {gainersData.map((_: any, index: number): any => (
-                    <tr
-                      key={index}
-                      className='border-b border-gray-200 text-sm font-thin'
-                    >
-                      <td className='px-4 py-2'>{index + 1}</td>
-                      <td className='px-4 py-2'>{_.mcap_type}</td>
-                      <td className='px-4 py-2'>{_.short_name}</td>
-                      <td className='px-4 py-2'>{_.prev_close}</td>
-                      <td className='px-4 py-2'>{_.percent.toFixed(2)} %</td>
-                      <td>
-                        <ChartComponent {...props} data={_} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/*  */}
+                ))}
+              </tbody>
+            </table>
+            <Pagination />
           </div>
-          <div className='items-center justify-center h-auto border-2 border-gray-200'>
-            {/* Table */}
-            {/* Start coding here */}
-            <p className='py-2 text-center text-gray-800 font-bold uppercase text-xl w-full'>
-              Top Losers{' '}
-              <Image
-                className='inline-block pb-1'
-                src={redTriangle}
-                alt='Red Triangle'
-                width={20}
-                height={20}
-              />
-            </p>
-            <div className='w-full'>
-              <table className='w-full text-left text-gray-800'>
-                <thead className='font-thin text-sm uppercase bg-gray-50'>
-                  <tr>
-                    <th scope='col' className='px-4 py-3'>
-                      SL.no
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET TYPE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      COMPANY
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      MARKET PRICE
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHANGES
-                    </th>
-                    <th scope='col' className='px-4 py-3'>
-                      CHART
-                    </th>
+          {/*  */}
+        </div>
+        <div className='items-center justify-center h-auto border-2 border-gray-200'>
+          {/* Table */}
+          {/* Start coding here */}
+          <p className='bg-white-50 py-2 mb-2 text-center text-gray-800 font-bold uppercase text-xs sm:text-xs md:text-xs lg:text-md xl:text-xl w-full'>
+            Top Losers{' '}
+            <Image
+              className='inline-block pb-1'
+              src={redTriangle}
+              alt='Red Triangle'
+              width={20}
+              height={20}
+            />
+          </p>
+          <div className='w-full relative overflow-x-auto'>
+            <table className='w-full text-center text-gray-800'>
+              <thead className='font-thin text-sm uppercase bg-gray-50'>
+                <tr>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    SL.no
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    TYPE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    COMPANY
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    PRICE
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHANGES
+                  </th>
+                  <th
+                    scope='col'
+                    className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'
+                  >
+                    CHART
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {losersData.map((_: any, index: number): any => (
+                  <tr
+                    key={index}
+                    className='border-b border-gray-200 text-sm font-thin'
+                  >
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {index + 1}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.mcap_type}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.short_name}
+                    </td>
+                    <td className='px-4 py-2 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.prev_close}
+                    </td>
+                    <td className='px-1 py-1 text-xxs sm:text-xs md:text-xs lg:text-sm xl:text-sm'>
+                      {_.percent.toFixed(2)} %
+                    </td>
+                    <td className='w-4'>
+                      <ChartComponent {...props} data={_} />
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {losersData.map((_: any, index: number): any => (
-                    <tr
-                      key={index}
-                      className='border-b border-gray-200 text-sm font-thin'
-                    >
-                      <td className='px-4 py-2'>{index + 1}</td>
-                      <td className='px-4 py-2'>{_.mcap_type}</td>
-                      <td className='px-4 py-2'>{_.short_name}</td>
-                      <td className='px-4 py-2'>{_.prev_close}</td>
-                      <td className='px-4 py-2'>{_.percent.toFixed(2)} %</td>
-                      <td>
-                        <ChartComponent {...props} data={_} />
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            {/*  */}
+                ))}
+              </tbody>
+            </table>
+            <Pagination />
           </div>
+          {/*  */}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
